@@ -1,22 +1,35 @@
 import React from 'react'
 import "./Navbar.css"
+import {Link} from "react-router-dom"
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {productList} from './Products';
+
 
 const Navbar = () => {
 
+const [data,setData]=React.useState("")
+  const searchProduct=()=>{
+productList.filter((pro)=>{
+if(data=" "){
+  return pro
+}else if(pro.name===data||pro.category===data){
+return pro
+}
+})
+  }
   return (
     <div className='navbar' >
-        <img
+      <Link to="/" > <img
           className="logo"
           src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        />
+        /></Link>
     
 
       {/* searchbar */}
       <div className="search">
-        <input className="searchInput" type="text" />
-        <SearchIcon className="searchIcon" />
+        <input className="searchInput" type="text" onChange={(e)=>setData(e.target.value)} />
+        <SearchIcon className="searchIcon" onClick={searchProduct} />
       </div>
       {/* added options */}
       <div className="nav">
@@ -41,8 +54,7 @@ const Navbar = () => {
         {/* when cart is clicked it should go to checkout page */}
         
           <div className="optionCart">
-            <ShoppingCartIcon />
-            <span className=" cartCount">0</span>
+            <Link to="/checkout"><ShoppingCartIcon /></Link>
           </div>
       </div>
     </div>
