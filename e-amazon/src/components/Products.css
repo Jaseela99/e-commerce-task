@@ -15,22 +15,30 @@
     
     height: 100px;
     margin-bottom: 15px;
+    font-weight: 500;
+    font-size: larger;
 }
 .names{
     display: flex;
     justify-content:space-between;
-
-}
-.rating{
-    display:flex;
+    gap:10px;
 }
 
-.product > button{
+.end {
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    color:green;
+    font-weight: 400;
+}
+.end  > button{
     background: #f3c445;
     border: 1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    border-radius:5px;
+    
 }
 
 .price{
@@ -43,6 +51,8 @@
     width:100%;
     object-fit:contain;
     margin-bottom: 15px;
-
+    border-top: 2px solid grey;
+    border-right: 2px solid grey;
+    border-radius: 20px;
 
 }

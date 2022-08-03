@@ -67,19 +67,15 @@ const Products = () => {
               <small>₹</small>
               <strong>{pro.price}</strong>
             </p>
-            <div className="rating">
-              {Array(pro.rating)
-                .fill()
-                .map((_, i) => (
-                  <p>★</p>
-                ))}
-            </div>
+            
           </div>
 
           <img src={pro.image} alt="" />
+         <div className="end">
 
           <button>Add to Cart</button>
           <p>{pro.available ? "Instock" : "Out Of stock"}</p>
+         </div>
         </div>
       ))}
     </div>
