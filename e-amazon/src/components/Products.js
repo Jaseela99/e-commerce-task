@@ -39,7 +39,7 @@ const Products = ({name,id,price,available,vendor,category,image}) => {
             
           </div>
 
-          <img src={image} alt="veg" />
+          <img src={image} alt="" />
          <div className="end">
 
           <button onClick={AddToCart}>Add to Cart</button>

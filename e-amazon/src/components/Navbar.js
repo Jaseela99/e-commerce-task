@@ -3,10 +3,22 @@ import "./Navbar.css"
 import {Link} from "react-router-dom"
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useStateValue } from './StateProvider';
 
 
 const Navbar = () => {
   
+ const cart = useStateValue()
+ const [data,setData] =React.useState("")
+ const searchFromCart=(cart)=>{
+  cart.filter(item => {
+    if (data === "") {
+      return item;
+    } else if (item.name.toLowerCase().includes(data.toLowerCase())) {
+      return item;
+    }
+  });
+ }
 
   return (
     <div className='navbar' >
@@ -18,8 +30,8 @@ const Navbar = () => {
 
       {/* searchbar */}
       <div className="search">
-        <input className="searchInput" type="text"  />
-        <SearchIcon className="searchIcon" />
+        <input className="searchInput" type="text"  onChange={(e)=>setData(e.target.value)}/>
+        <SearchIcon className="searchIcon" onClick={searchFromCart(cart)} />
       </div>
       {/* added options */}
       <div className="nav">
