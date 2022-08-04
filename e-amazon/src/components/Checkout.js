@@ -15,10 +15,7 @@ function Checkout() {
       <h3>hello Guest</h3>
         <h2 className="title" >Your Cart</h2>
 
-      <div >
-        <h2>
-        </h2>
-      </div>
+      
     </div>
   );
 }

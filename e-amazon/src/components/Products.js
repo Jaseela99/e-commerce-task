@@ -52,10 +52,13 @@ export const productList = [
 ];
 const Products = () => {
 const [cart,setCart]=React.useState([])
-  const AddCart=()=>{
+  const AddToCart=(id)=>{
     productList.filter((pro)=>{
-      setCart(pro)
+if(pro.id===id){
+  setCart(pro)
+}
     })
+  
   }
 
   return (
@@ -79,7 +82,7 @@ const [cart,setCart]=React.useState([])
           <img src={pro.image} alt="" />
          <div className="end">
 
-          <button onClick={AddCart}>Add to Cart</button>
+          <button onClick={AddToCart}>Add to Cart</button>
           <p>{pro.available ? "Instock" : "Out Of stock"}</p>
          </div>
         </div>

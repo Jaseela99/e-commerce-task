@@ -3,11 +3,11 @@ import "./Home.css"
 import Products from './Products'
 
 
-const Home = () => {
+const Home = ({cart}) => {
   return (
     <div className='home'>
        <div className='row'>
-         <Products/>
+         <Products cart={cart}/>
         </div>
     </div>
   )
