@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Checkout from './components/Checkout';
+import CartPage from './components/CartPage';
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Routes>
-        <Route exact path="/" element={<Home/>}/> 
-        <Route exact path="/checkout" element={<Checkout/>}/> 
+        <Route  path="/" element={<Home/>}/> 
+        <Route path="/cart" element={<CartPage/>}/> 
       </Routes>
       </BrowserRouter>
     
